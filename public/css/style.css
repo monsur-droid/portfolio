@@ -1,0 +1,234 @@
+body { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+ .user-login {
+     padding: 10px;
+     -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+     border-radius: 0 0 5px 5px;
+ }
+
+ .login {
+     font-size: 1.3em;
+     border-radius: 5px 5px 0 0;
+     padding-left: 50px;
+     text-align: center !important;
+     text-transform: uppercase;
+     text-decortion: underline;
+ }
+
+ .login span {
+     margin-left: 6px;
+     transform: scale(1.4);
+     text-align: center;
+     text-decoration: line-through !important;
+ }
+
+ .user-login input {
+     width: 60%;
+     outline: none;
+     border: 2px solid lavender;
+     padding: 3px 6px;
+     border-radius: 5px;
+     color: rgb(85, 80, 80);
+ }
+
+ .user-login button {
+     outline: none;
+     border: 2px lavender solid;
+     padding: 3px 6px;
+     border-radius: 5px;
+     color: rgb(85, 80, 80);
+ }
+
+ .user-login button:hover {
+     background: rgb(59, 54, 54);
+     color: #fff;
+ }
+
+ .page-wrapper {
+     width: 100%;
+     margin: 0 auto;
+     margin-top: 60px;
+     text-align: center;
+ }
+
+ .title {
+     background: #383a38ce;
+     color: #fff;
+     font-weight: bold;
+     margin: 0;
+     padding: 5px;
+     text-align: left;
+ }
+
+ .title {
+     display: flex;
+     flex-direction: row;
+     padding: 5px;
+ }
+
+ .title #userName {
+     margin-top: 4px;
+ }
+
+ .image {
+     width: 30px;
+     height: 30px;
+     border-radius: 50%;
+     background: #cfd4cfce;
+     color: rgb(115, 163, 82);
+     align-items: center;
+     position: relative;
+     margin: 0 5px;
+ }
+
+ .image span {
+     position: absolute;
+     transform: translate(-50%, -50%);
+     top: 50%;
+     left: 50%;
+     font-size: 1.3em;
+ }
+
+ .chat-container {
+     width: 100%;
+ }
+
+ .message-container {
+     position: relative;
+     width: 100%;
+     height: 300px;
+     overflow-x: auto;
+     background: #cfd4cfce;
+ }
+
+ .bg-image {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     /*background-image: url(../images/wl5.jpg);
+     background-repeat: no-repeat;
+     background-position: center;
+     opacity: 1;*/
+     z-index: -10;
+ }
+
+ .send-container {
+     width: 100%;
+     padding: 10px;
+     background: #383a38ce;
+ }
+
+ .send-container input {
+     width: calc(85% - 10px);
+     height: 20px;
+     font-size: .9em;
+     padding: 3px 8px;
+     height: 100%;
+     outline: none;
+     border: rgb(181, 181, 212) solid 2px;
+     border-radius: 5px 0 0 5px;
+     margin-right: -8px;
+ }
+
+ .send-container button {
+    width: calc(15% - 10px);
+    height: 100%;
+    font-size: .9em;
+    padding: 3px 8px;
+    outline: none;
+    border: rgb(181, 181, 212) solid 2px;
+    border-left: rgb(181, 181, 212) solid 1px;
+    border-radius: 0 5px 5px 0;
+    margin-left: 0;
+}
+
+.send-container button:active {
+    transform: scale(.99);
+    background: rgb(171, 188, 242);
+}
+
+@media (min-width: 480px) {
+    .page-wrapper {
+        width: 60%;
+    }
+}
+
+@media (min-width: 800px) {
+    .page-wrapper {
+        width: 40%;
+    }
+}
+
+@media (min-width: 1000px) {
+    .page-wrapper {
+        width: 35%;
+    }
+}
+
+.broadcast-body {
+    max-width: 80%;
+    display: block;
+    border-radius: 10px;
+    text-align: left!important;
+    background: rgb(55, 56, 56);
+    float: left;
+    clear: both;
+    padding: 3px 8px;
+    margin: 3px 5px;
+    font-size: .8em;
+    color: white;
+}
+
+.sender-body {
+    max-width: 80%;
+    display: block;
+    border-radius: 10px;
+    text-align: left;
+    background: rgb(45, 133, 114);
+    float: right;
+    clear: both;
+    padding: 3px 8px;
+    margin: 3px 5px;
+    font-size: .8em;
+    color: white;
+}
+
+.info-body {
+    display: block;
+    text-align: center;
+    font-size: .7em;
+    font-style: italic;
+    margin: 7px 0;
+    float: left;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    clear: both;
+    background: #646664ce;
+    color: #fff;
+    border-radius: 10px;
+    padding: 2px 8px;
+}
+
+.sender-row {
+    font-size: .8em;
+    color: rgb(243, 191, 243);
+}
+
+.date-body {
+    font-size: .7em;
+    color: rgba(255, 255, 255, .8);
+    margin-left: 10px;
+    margin-top: 5px;
+    float: right;
+    clear: both;
+}
+
+.card {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}

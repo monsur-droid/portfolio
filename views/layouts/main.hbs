@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/lib-css/all.css">
+    <link rel="stylesheet" href="/css/lib-css/w3.css">
+
+    <script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="js/client.js"></script>
+    <script defer src="js/client-ui.js"></script>
+    <title>Chatly</title>
+</head>
+
+<body>
+    <div class="page-wrapper card">
+        <div class="title">
+            <div class="image"><span>{{photo}}</span></div>
+            <div id="userName">{{userLogin}}</div>
+        </div>
+        <div class="message-wrapper">
+            {{{body}}}
+        </div>
+    </div>
+</body>
+
+</html>
