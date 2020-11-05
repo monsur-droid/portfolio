@@ -1,14 +1,17 @@
 const socket = io('http://localhost:3000');
+
+// Query document for DOM elements
 const sendBtn = document.querySelector('#send-button');
 const msgInput = document.querySelector('#message-input');
 const chatContainer = document.querySelector('.message-container');
 const name = document.querySelector('#userName').innerHTML;
-
+const onlineUser = document.querySelector('#online');
 
 // Create an emitter that gets number of user from the server
 socket.on('export-users', users => {
     // If name is not set
     let usersOnline = Object.keys(users).length
+    onlineUser.innerHTML = usersOnline
     socket.emit('new-user', name)
 })
 

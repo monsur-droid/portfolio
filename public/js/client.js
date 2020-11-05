@@ -48,8 +48,7 @@ function showDate() {
 function scrollTop() {
     window.setInterval(() => {
         let chat = document.querySelector('.message-container');
-        chat.scrollTop = chat.scrollHeight
-        console.log(chat.scrollHeight)
+        chat.scrollTop = chat.scrollHeight;
     }, 4);
 }
 
