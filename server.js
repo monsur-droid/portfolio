@@ -1,9 +1,6 @@
 const express = require('express');
-const chatServer = require('./chat-server');
 const exphbs = require('express-handlebars');
-const bodyParser = require('body-parser')
 const path = require('path');
-var credentials = require('./lib/credentials.js');
 
 const app = express();
 
@@ -18,10 +15,6 @@ app.use(express.json());
 // Handlebars middleware
 app.engine('.hbs', exphbs({defaulLayout: 'main', extname: '.hbs'}));
 app.set('view engine', '.hbs');
-
-//import middleware for handling cookies
-app.use(require('cookie-parser')(credentials.cookieSecret));
-app.use(require('express-session')());
 
 // Flash message
 app.use(function (req, res, next) {
