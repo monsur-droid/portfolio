@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +13,6 @@
     <script defer src="js/client-ui.js"></script>
     <title>Chatly</title>
 </head>
-
 <body>
     <div class="page-wrapper card">
         <div class="title">
@@ -22,6 +20,10 @@
             <div id="userName">{{userLogin}}</div>
             <div class="image online-users"><span id="online">0</span></div>
             <div class="image designer"></div>
+            <div class="show-users" style="display: none;">
+                <span>Online users</span>
+                <ul id="all-online"></ul>
+            </div>
         </div>
         <div class="message-wrapper">
             {{{body}}}

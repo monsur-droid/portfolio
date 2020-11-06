@@ -2,36 +2,36 @@ const io = require('socket.io')(3000);
 
 // Users array
 const users = {}
-let numberOfConnection;
-
 
 // When user connected to the server
 io.on('connection', socket => {
-    // Export number of users
-    
-    socket.broadcast.emit('export-users', users);
-    socket.emit('export-users', users);
-
     // If user joins freshly
     socket.on('new-user', name => {
         // Create new user info
         users[socket.id] = name;
 
-        // Broadcast message to the group
+        // Emit and broadcast users info to export-user emmiter
+        socket.broadcast.emit('export-users', [users, Object.keys(users).length]);
+        socket.emit('export-users', [users, Object.keys(users).length]);
+
+        // Announce new user to the group except the new user
         socket.broadcast.emit('user-connected', name)
     })
 
     // Create server event for accepting message from the client
     socket.on('send-chat-message', messageBody => {
-
         // Broadcast the message to all the connected  clients except sender
-        socket.broadcast.emit('chat-message', messageBody)
+        socket.broadcast.emit('chat-message', messageBody);
     });
 
-    //if user disconneceted
+    // If user disconneceted
     socket.on('disconnect', () => {
         socket.broadcast.emit('user-disconnected', users[socket.id]);
         delete users[socket.id]
+
+        // Emit and broadcast users info to export-user emmiter
+        socket.broadcast.emit('export-users', [users, Object.keys(users).length]);
     })
+
 })
 

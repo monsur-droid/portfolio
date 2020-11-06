@@ -11,7 +11,7 @@ const monthNames = {
     9: 'Oct',
     10: "Nov",
     11: "Dec",
-} 
+}
 
 
 function appendMessage(message, user, userClassAttr, bodyClassAttr, dateClassAttr, fullDate, fontColor) {
@@ -52,3 +52,20 @@ function scrollTop() {
     }, 4);
 }
 
+function showOnlineUsers() {
+    let online = document.querySelector('#online')
+    let clickable = false
+    let showUsers = document.querySelector('.show-users')
+    document.querySelector('.online-users').onclick = () => {
+        if (online.innerHTML !== '0') {
+            showUsers.style.display = 'block'
+            setTimeout(() => {
+                clickable = true
+            }, 500);
+        }
+    }
+    document.querySelector('.message-container').onclick = () => {
+        if (clickable) showUsers.style.display = 'none'
+        clickable = false
+    }
+}
