@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3000');
+const socket = io('http://localhost:8080');
 
 // Query document for DOM elements
 const sendBtn = document.querySelector('#send-button');
@@ -29,6 +29,9 @@ socket.on('export-users', users => {
     // Don't show online users if no user is online
     if ( onlineUser.innerHTML === '0') {
         document.querySelector('.show-users').style.display = 'none';
+        document.querySelector('.online-users').classList.remove('roll')
+    } else {
+        document.querySelector('.online-users').classList.add('roll')
     }
 })
 
@@ -67,6 +70,6 @@ sendBtn.addEventListener('click', e => {
     appendMessage(message, '', '', 'sender-body', 'date-body', showDate())
 })
 
-scrollTop()
+if (!showLog) scrollTop()
 showOnlineUsers()
 appendMessage('You joined', '', '', 'info-body', 'date-body', showDate(), 'color:#fff')

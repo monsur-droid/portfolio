@@ -45,25 +45,41 @@ function showDate() {
     return `${d.getDate()} ${monthNames[d.getMonth()].toUpperCase()} @${d.getHours()}:${d.getMinutes()}`
 }
 
+let showLog = false
+let clickable = false
+
 function scrollTop() {
     window.setInterval(() => {
-        let chat = document.querySelector('.message-container');
-        chat.scrollTop = chat.scrollHeight;
+        if (!showLog) {
+            let chat = document.querySelector('.message-container');
+            chat.scrollTop = chat.scrollHeight;
+        }
     }, 4);
 }
 
+function scrollUp() {
+    alert(showLog)
+    showLog = true
+}
+
+document.getElementById('btn-up')
+    .addEventListener('click', scrollUp)
+
+
 function showOnlineUsers() {
-    let online = document.querySelector('#online')
+    let online = document.querySelector('#online');
+    let onlineUsers = document.querySelector('.online-users')
     let clickable = false
     let showUsers = document.querySelector('.show-users')
-    document.querySelector('.online-users').onclick = () => {
+    onlineUsers.onclick = () => {
         if (online.innerHTML !== '0') {
-            showUsers.style.display = 'block'
+            showUsers.style.display = 'block';
             setTimeout(() => {
                 clickable = true
             }, 500);
         }
     }
+
     document.querySelector('.message-container').onclick = () => {
         if (clickable) showUsers.style.display = 'none'
         clickable = false

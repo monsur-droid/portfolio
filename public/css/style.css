@@ -105,6 +105,24 @@ body {
     cursor: pointer;
 }
 
+.roll {
+    animation: roll 8s linear infinite;
+}
+
+@keyframes roll {
+    30% {
+        transform: scale(.55);
+    }
+
+    75% {
+        transform: scale(.75);
+    }
+
+    100% {
+        transform: scale(.6);
+    }
+}
+
 .designer {
     position: absolute;
     right: 0;
@@ -154,18 +172,42 @@ body {
      height: 300px;
      overflow-x: auto;
      background: #cfd4cfce;
+     overflow-y: hidden;
  }
 
  .bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 11210;
+}
+
+ .bg-image .div {
+     border: 1px gray solid;
+     border-radius: 3px;
      position: absolute;
-     width: 100%;
-     height: 100%;
-     /*background-image: url(../images/wl5.jpg);
-     background-repeat: no-repeat;
-     background-position: center;
-     opacity: 1;*/
-     z-index: -10;
+     right: 3%;
+     opacity: .4;
+     padding: 0 3px;
+     z-index: 1000;
+     transition: all 2s linear;
+     background: gray;
+     cursor: pointer;
  }
+
+ .bg-image .div:hover {
+     opacity: 1;
+ }
+
+ .bg-image .div:nth-child(1) {
+    top: 0;
+    margin-top: 2%;
+}
+
+ .bg-image .div:nth-child(2) {
+    bottom: 0;
+    margin-bottom: 2%;
+}
 
  .send-container {
      width: 100%;
